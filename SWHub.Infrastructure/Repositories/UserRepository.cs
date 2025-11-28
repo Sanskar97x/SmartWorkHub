@@ -1,12 +1,7 @@
-using SmartWorkHub.Application.Interfaces;
-using SmartWorkHub.Domain.Entities;
-
 namespace SmartWorkHub.Infrastructure.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository
     {
-        public void Add(User user) { }
-        public List<User> GetAll() => new();
-        public User GetById(int id) => new();
+        // TODO: Implement CRUD operations
     }
 }

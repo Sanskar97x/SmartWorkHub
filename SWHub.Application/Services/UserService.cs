@@ -2,13 +2,8 @@ using SmartWorkHub.Application.Interfaces;
 
 namespace SmartWorkHub.Application.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
-        private readonly IUserRepository _repo;
-
-        public UserService(IUserRepository repo)
-        {
-            _repo = repo;
-        }
+        // TODO: Implement service methods
     }
 }

@@ -1,14 +1,18 @@
+using System;
+using System.Collections.Generic;
+using SmartWorkHub.Domain.Common;
+
 namespace SmartWorkHub.Domain.Entities
 {
-    public class User
+    public class User : AuditableEntity
     {
-        public int Id { get; set; }
-        public string FullName { get; set; } = null!;
+        public string FirstName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
         public string Email { get; set; } = null!;
+        public string PasswordHash { get; set; } = null!;
 
-        public int? TeamId { get; set; }
-        public Team? Team { get; set; }
-
-        public ICollection<TaskItem>? AssignedTasks { get; set; }
-        public ICollection<Project>? CreatedProjects { get; set; }
-    }}
+        // Navigation properties
+        public List<Project> Projects { get; set; } = new();
+        public List<TaskItem> AssignedTasks { get; set; } = new();
+    }
+}

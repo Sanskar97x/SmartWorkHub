@@ -2,11 +2,14 @@ namespace SmartWorkHub.Domain.ValueObjects
 {
     public class Email
     {
-        public string Value { get; private set; }
+        public string Address { get; }
 
-        public Email(string value)
+        public Email(string address)
         {
-            Value = value;
+            // Optional: validate email format
+            Address = address;
         }
+
+        public override string ToString() => Address;
     }
 }

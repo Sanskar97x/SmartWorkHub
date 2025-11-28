@@ -2,13 +2,8 @@ using SmartWorkHub.Application.Interfaces;
 
 namespace SmartWorkHub.Application.Services
 {
-    public class ProjectService
+    public class ProjectService : IProjectService
     {
-        private readonly IProjectRepository _repo;
-
-        public ProjectService(IProjectRepository repo)
-        {
-            _repo = repo;
-        }
+        // TODO: Implement service methods
     }
 }

@@ -4,6 +4,7 @@ namespace SmartWorkHub.Domain.Enums
     {
         Todo,
         InProgress,
-        Done
+        Completed,
+        Blocked
     }
 }

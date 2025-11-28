@@ -2,13 +2,16 @@ namespace SmartWorkHub.Domain.ValueObjects
 {
     public class FullName
     {
-        public string First { get; private set; }
-        public string Last { get; private set; }
+        public string FirstName { get; }
+        public string LastName { get; }
 
-        public FullName(string first, string last)
+        public FullName(string firstName, string lastName)
         {
-            First = first;
-            Last = last;
+            FirstName = firstName;
+            LastName = lastName;
         }
+
+        // Optional: override ToString()
+        public override string ToString() => $"{FirstName} {LastName}";
     }
 }

@@ -1,11 +1,7 @@
-using SmartWorkHub.Domain.Entities;
-
 namespace SmartWorkHub.Application.Interfaces
 {
-    public interface IProjectRepository
+    public interface IProjectService
     {
-        Project GetById(int id);
-        List<Project> GetAll();
-        void Add(Project project);
+        // TODO: Define service methods
     }
 }

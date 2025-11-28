@@ -1,10 +1,7 @@
-using SmartWorkHub.Domain.Entities;
-
 namespace SmartWorkHub.Application.Interfaces
 {
-    public interface ITaskRepository
+    public interface ITaskService
     {
-        TaskItem GetById(int id);
-        void Add(TaskItem task);
+        // TODO: Define service methods
     }
 }

@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SmartWorkHub.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ProjectsController : ControllerBase
     {
-
+        // TODO: Add endpoints
     }
 }

@@ -2,8 +2,8 @@ namespace SmartWorkHub.Domain.Enums
 {
     public enum UserRole
     {
-        Member,
+        Admin,
         Manager,
-        Admin
+        User
     }
 }

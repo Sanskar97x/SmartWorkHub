@@ -1,19 +1,24 @@
+using System;
+using SmartWorkHub.Domain.Common;
+using SmartWorkHub.Domain.Enums;
+
 namespace SmartWorkHub.Domain.Entities
 {
-    public class TaskItem
+    public class TaskItem : AuditableEntity
     {
-        public int Id { get; set; }
+        // Core properties
         public string Title { get; set; } = null!;
         public string? Description { get; set; }
-
-        public int ProjectId { get; set; }
-        public Project Project { get; set; } = null!;
-
-        public int AssignedToUserId { get; set; }
-        public User AssignedToUser { get; set; } = null!;
-
-        public string Status { get; set; } = "Pending"; // Pending, InProgress, Completed
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public TaskStatus Status { get; set; } = TaskStatus.Todo;
+        public TaskPriority Priority { get; set; } = TaskPriority.Medium;
         public DateTime? DueDate { get; set; }
+
+        // Foreign Keys
+        public Guid ProjectId { get; set; }
+        public Guid AssignedToId { get; set; }
+
+        // Navigation properties
+        public Project Project { get; set; } = null!;
+        public User AssignedTo { get; set; } = null!;
     }
 }

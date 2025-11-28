@@ -2,10 +2,10 @@ namespace SmartWorkHub.Domain.Entities
 {
     public class Team
     {
-        public int Id { get; set; }
-        public string TeamName { get; set; } = null!;
-
-        public ICollection<User>? Users { get; set; }
-        public ICollection<Project>? Projects { get; set; }
+        public int TeamId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int CreatedByUserId { get; set; } // FK → Users
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

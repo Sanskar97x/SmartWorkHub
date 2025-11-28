@@ -1,19 +1,21 @@
+using System;
+using System.Collections.Generic;
+using SmartWorkHub.Domain.Common;
+
 namespace SmartWorkHub.Domain.Entities
 {
-    public class Project
+    public class Project : AuditableEntity
     {
-        public int Id { get; set; }
-        public string Title { get; set; } = null!;
+        public string Name { get; set; } = null!;
         public string? Description { get; set; }
 
-        public int TeamId { get; set; }
-        public Team Team { get; set; } = null!;
+        // Foreign Keys
+        public Guid WorkspaceId { get; set; }
+        public Guid OwnerId { get; set; }
 
-        public int CreatedByUserId { get; set; }
-        public User CreatedByUser { get; set; } = null!;
-
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-        public ICollection<TaskItem>? Tasks { get; set; }
+        // Navigation properties
+        public Workspace Workspace { get; set; } = null!;
+        public User Owner { get; set; } = null!;
+        public List<TaskItem> Tasks { get; set; } = new();
     }
 }
